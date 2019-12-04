@@ -7,6 +7,7 @@ Bonjour,
 
 Pour ce test technique, j'ai du reproduire le jeu "Car vs Cops" tout en ajouttant une mécanique de gameplay originale
 
+La vidéo et le build sont aussi dans le git (en temps normal, je ne mettrais pas un build dans le versioning, mais là, ce n'est pas un vrai projet)
 
 
 La mécanique que j'ai choisi d'ajoutter est la suivante : 
@@ -36,6 +37,9 @@ Il y a certaines features que je n'ai pas eu le temps d'implementer :
 - Les lens flare sur les voitures de police
 - Les voitures de police alternative (quand j'ai joué, j'ai eu un fourgon, mais je ne sais pas si il y en a d'autres, je ne suis pas assez bon au jeu ^^)
 
+
+Niveau optimisation, sur mon telephone (Huawei P20) le jeu tourne à ~100fps, sur le téléphone un peu plus vieux d'une amie, il tourne bien (mais je ne connais pas le fps exacte)
+Comme je n'ai pas d'autres devices sous la main, je ne peu pas dire, mais si le jeu est trop gourmand, le premier truc que je changerais serais les particules, qui sont des mesh (j'ai copié le jeu de base pour ça).
 
 
 Personellement, j'ai bien aimé réaliser ce jeu, je pense que l'ultra casual peu être intéréssant à developper, car on change souvent de gameplay, ce qui permet de ne pas tomber dans la routine (mais peut être que je me fourvoi et que la réalité est différente)
