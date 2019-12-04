@@ -37,8 +37,6 @@ Il y a certaines features que je n'ai pas eu le temps d'implementer :
 - Les voitures de police alternative (quand j'ai joué, j'ai eu un fourgon, mais je ne sais pas si il y en a d'autres, je ne suis pas assez bon au jeu ^^)
 
 
-Actuelement, le jeu est plus simple que l'original, mais c'est parce que je le trouve plus agréable comme ça, mais les deux leviers de difficulté pricipaux sont la vitesse du joueur/police et leur angle de rotation
-
 
 Personellement, j'ai bien aimé réaliser ce jeu, je pense que l'ultra casual peu être intéréssant à developper, car on change souvent de gameplay, ce qui permet de ne pas tomber dans la routine (mais peut être que je me fourvoi et que la réalité est différente)
 

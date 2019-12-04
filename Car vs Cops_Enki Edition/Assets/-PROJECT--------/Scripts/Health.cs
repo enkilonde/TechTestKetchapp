@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     public int hitPoints = 1;
     public float invicibilityTime = 1;
     private float invicibilityTimer = 0;
-    
+
     [HideInInspector]
     public int currentHitPoints;
 
@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        if(invicibilityTimer > 0)
+        if (invicibilityTimer > 0)
             invicibilityTimer -= Time.deltaTime;
     }
 
@@ -35,26 +35,27 @@ public class Health : MonoBehaviour
         if (invicibilityTimer > 0)
             return;
         invicibilityTimer = invicibilityTime;
-
-        SoundManager.instance.Collision();
+        
+        currentHitPoints--;
 
         UIDebug.WriteLine(name + " hit ");
-
-        currentHitPoints--;
 
         switch (currentHitPoints)
         {
             case 2:
                 smoke.Play();
+                SoundManager.instance.Collision();
                 break;
             case 1:
                 smoke.Stop();
                 fire.Play();
+                SoundManager.instance.Collision();
                 break;
             case 0:
                 Death();
                 break;
             default:
+                SoundManager.instance.Collision();
                 break;
         }
 
@@ -66,13 +67,13 @@ public class Health : MonoBehaviour
         Destroy(explosion, 3);
         SoundManager.instance.Explosion();
 
-        if(isPlayer)
+        if (isPlayer)
         {
             GlobalManager.instance.EndGame();
         }
         else
         {
         }
-            Destroy(gameObject);
+        Destroy(gameObject);
     }
 }

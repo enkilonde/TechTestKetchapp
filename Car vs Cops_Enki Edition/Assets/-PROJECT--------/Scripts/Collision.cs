@@ -18,7 +18,7 @@ public class Collision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
@@ -40,6 +40,7 @@ public class Collision : MonoBehaviour
         else if (other.CompareTag("Coin"))
         {
             GlobalManager.instance.coins++;
+            GlobalManager.instance.currentScore += 5;
             vehicleMove.Boost();
             Destroy(other.gameObject);
             SoundManager.instance.CoinPickup();

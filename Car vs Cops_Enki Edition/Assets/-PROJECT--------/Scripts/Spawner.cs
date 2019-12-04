@@ -14,6 +14,9 @@ public class Spawner : MonoBehaviour
 
     public bool active = false;
 
+    public bool checkDistance = false;
+    public float maxDistDestroy = 150;
+
     private List<GameObject> spawned = new List<GameObject>();
 
     /// <summary>
@@ -31,8 +34,6 @@ public class Spawner : MonoBehaviour
             return;
 
         SpawnTimer();
-
-        
     }
 
     private void SpawnTimer()
@@ -41,11 +42,16 @@ public class Spawner : MonoBehaviour
         if (timer <= 0)
         {
             Spawn();
+
+            //Theses 2 methods are called here and not in Update to reduce impact on perfs
             CheckNullrefs();
+            CheckDistance();
             timer += spawningInterval;
         }
 
     }
+
+
 
     private void CheckNullrefs()
     {
@@ -54,6 +60,22 @@ public class Spawner : MonoBehaviour
             if (spawned[i] == null)
                 spawned.RemoveAt(i);
         }
+    }
+
+    private void CheckDistance()
+    {
+        if (!checkDistance)
+            return;
+
+        for (int i = spawned.Count - 1; i >= 0; i--)
+        {
+            if (Vector3.Distance(spawned[i].transform.position, player.position) > maxDistDestroy)
+            {
+                Destroy(spawned[i]);
+                spawned.RemoveAt(i);
+            }
+        }
+
     }
 
     private void Spawn()

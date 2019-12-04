@@ -8,6 +8,7 @@ public class UIDisplayer : MonoBehaviour
     public Health playerHealth;
 
     public Text scoreText;
+    public Text coinsText;
 
     public Image[] hearths;
 
@@ -21,6 +22,7 @@ public class UIDisplayer : MonoBehaviour
     void Update()
     {
         scoreText.text = GlobalManager.instance.currentScore.ToString();
+        coinsText.text = GlobalManager.instance.coins.ToString();
 
         for (int i = 0; i < hearths.Length; i++)
         {

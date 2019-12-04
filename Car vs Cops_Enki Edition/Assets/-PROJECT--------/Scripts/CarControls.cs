@@ -41,7 +41,6 @@ public class CarControls : MonoBehaviour
     {
         active = true;
         wheelOutside.anchoredPosition = ((PointerEventData)input).position;
-        Debug.Log("Start");
     }
     internal void EndGame()
     {
@@ -51,7 +50,6 @@ public class CarControls : MonoBehaviour
 
     private void OnTouch(InputTouch input)
     {
-        Debug.Log("Touch");
         if (!active)
             return;
         wheelOutside.anchoredPosition = input.startScreenPosPixels;
@@ -60,7 +58,6 @@ public class CarControls : MonoBehaviour
 
     private void OnHover(InputTouch input)
     {
-        Debug.Log("Hover");
         if (!active)
             return;
         wheelAngle = Vector2.SignedAngle((input.screenPosPixels - input.startScreenPosPixels).normalized, Vector2.down) + 180;
